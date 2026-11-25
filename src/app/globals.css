@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f1ea;
+  --foreground: #1a1814;
+  --muted: #5c564c;
+  --card: #fffcf7;
+  --border: #ddd6c8;
+  --accent: #0c5c58;
+  --accent-foreground: #f4fffe;
+  --ring: #0c5c58;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --background: #10120f;
+  --foreground: #f4f0e6;
+  --muted: #c8c2b6;
+  --card: #1b1e19;
+  --border: #31362e;
+  --accent: #9ee0d8;
+  --accent-foreground: #10211f;
+  --ring: #9ee0d8;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --font-sans: "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
